@@ -10,7 +10,7 @@
 
 <style>
 
-/* 🔤 Custom font */
+/* 🔤 FONT */
 @font-face {
     font-family: 'Imaginary Friend';
     src: url('ImaginaryFriend-BB-W00-Regular.ttf') format('truetype');
@@ -24,51 +24,59 @@
 
 body{
     height:100vh;
+    overflow:hidden;
 
     font-family:'Imaginary Friend', serif;
 
-    /* background */
+    /* 🌄 Background */
     background-image: url("background.jpeg");
-    background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
-
-    /* layout system */
-    display:flex;
-    justify-content:flex-end;   /* pushes content downward */
-    align-items:center;
+    background-position: center;
+    background-size: cover;
 }
 
-/* 🌑 overlay */
+/* 📱 Mobile background fix (prevents bad cropping focus) */
+@media (max-width: 768px){
+    body{
+        background-position: center top;
+    }
+}
+
+/* 🌑 Overlay for readability */
 body::before{
     content:"";
     position:absolute;
     inset:0;
-    background: rgba(0,0,0,0.25);
+    background: rgba(0,0,0,0.28);
     z-index:0;
 }
 
-/* TEXT WRAPPER */
+/* 📦 Layout wrapper (bottom third positioning) */
+.container{
+    position:relative;
+    height:100vh;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    padding-bottom: 16vh; /* bottom-third placement */
+    z-index:1;
+}
+
+/* ✨ TEXT */
 .coming-soon{
-    width:100%;
     text-align:center;
     color:#fdd018;
     padding: 0 20px;
 
-    z-index:1;
-
-    /* push into bottom third naturally */
-    margin-bottom: 12vh;
-
     opacity:0;
-    animation: fadeIn 1.5s ease forwards;
+    animation: fadeIn 1.6s ease forwards;
 }
 
 @keyframes fadeIn{
     to { opacity:1; }
 }
 
-/* ✨ autosizing text */
+/* 🔤 Autosizing text */
 .coming-soon h1{
     font-size: clamp(2.2rem, 5vw, 5rem);
     letter-spacing: 5px;
@@ -89,18 +97,10 @@ body::before{
     text-decoration:underline;
 }
 
-/* 📱 mobile tuning */
+/* 📱 Small screen spacing tweak */
 @media (max-width: 768px){
-    .coming-soon{
-        margin-bottom: 10vh;
-    }
-
-    .coming-soon h1{
-        font-size: 2.2rem;
-    }
-
-    .coming-soon p{
-        font-size: 1rem;
+    .container{
+        padding-bottom: 12vh;
     }
 }
 
@@ -109,16 +109,18 @@ body::before{
 
 <body>
 
-<div class="coming-soon">
-    <h1>COMING SOON</h1>
+<div class="container">
+    <div class="coming-soon">
+        <h1>COMING SOON</h1>
 
-    <p>
-        meanwhile, check out our instagram
-        <a href="https://www.instagram.com/zeerandomlymade?igsh=MWVlZWVmOW5ieWU3Mg=="
-           target="_blank" rel="noopener noreferrer">
-           @zeerandomlymade
-        </a>
-    </p>
+        <p>
+            meanwhile, check out our instagram
+            <a href="https://www.instagram.com/zeerandomlymade?igsh=MWVlZWVmOW5ieWU3Mg=="
+               target="_blank" rel="noopener noreferrer">
+               @zeerandomlymade
+            </a>
+        </p>
+    </div>
 </div>
 
 </body>
