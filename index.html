@@ -37,10 +37,20 @@ body{
 
 /* 📱 Mobile background fix (prevents bad cropping focus) */
 @media (max-width: 768px){
+
     body{
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
+        background-image:
+            url("background.jpeg"),
+            url("mobilebackground.jpeg");
+
+        background-repeat: no-repeat, no-repeat;
+
+        /* main image stays visible */
+        background-size: contain, cover;
+
+        /* center both layers */
+        background-position: center, center;
+
         background-color: black;
     }
 }
