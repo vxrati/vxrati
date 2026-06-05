@@ -37,12 +37,11 @@ body{
 
 /* 📱 Mobile background fix (prevents bad cropping focus) */
 @media (max-width: 768px){
-
     body{
-        background-size: cover;
-
-        /* SMART CROPPING FOCUS */
-        background-position: center 25%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: black;
     }
 }
 
