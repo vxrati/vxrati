@@ -1,13 +1,9 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Zee Randomly Made</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -24,16 +20,11 @@ body{
     overflow:hidden;
     position:relative;
     font-family:'Cormorant Garamond', serif;
-}
 
-/* Background Image */
-.background{
-    position:fixed;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:-1;
+    background-image: url("background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* Text */
@@ -70,15 +61,13 @@ body{
 
 <body>
 
-<img src="background.png" class="background">
-
 <div class="coming-soon">
     <h1>COMING SOON</h1>
 
     <p>
         meanwhile, check out our instagram
         <a href="https://www.instagram.com/zeerandomlymade?igsh=MWVlZWVmOW5ieWU3Mg=="
-           target="_blank">
+           target="_blank" rel="noopener noreferrer">
            @zeerandomlymade
         </a>
     </p>
